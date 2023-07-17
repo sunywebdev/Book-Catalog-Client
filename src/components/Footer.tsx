@@ -1,13 +1,46 @@
+import { Link } from "react-router-dom";
+import { logout } from "../redux/features/user/userSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+
 const Footer = () => {
+	const { data: user } = useAppSelector((state) => state.user);
+	const dispatch = useAppDispatch();
 	return (
 		<>
 			<footer className='footer footer-center p-10 bg-base-200 text-base-content rounded'>
-				<div className='grid grid-flow-col gap-4'>
-					<a className='link link-hover'>Home</a>
-					<a className='link link-hover'>All Books</a>
-					<a className='link link-hover'>SignIn</a>
-					<a className='link link-hover'>SignUp</a>
-				</div>
+				<ul className="flex">
+					<li>
+						<Link to='/'>Home</Link>
+					</li>
+					<li>
+						<Link to='all-books'>All Books</Link>
+					</li>
+					{!user ? (
+						<>
+							<li>
+								<Link to='/signin'>SignIn</Link>
+							</li>
+							<li>
+								<Link to='/signup'>SignUp</Link>
+							</li>
+						</>
+					) : (
+						<>
+							<li>
+								<Link to='/add-new-book'>Add New Book</Link>
+							</li>
+							<li>
+								<Link to='/wishlist'>Wishlist</Link>
+							</li>
+							<li>
+								<Link to='/reading'>Reading</Link>
+							</li>
+							<li>
+								<button onClick={() => dispatch(logout())}>Logout</button>
+							</li>
+						</>
+					)}
+				</ul>
 				<div>
 					<div className='grid grid-flow-col gap-4'>
 						<a>

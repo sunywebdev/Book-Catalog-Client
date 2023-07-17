@@ -28,6 +28,7 @@ const EditBook = () => {
 			genre: form.genre.value,
 			summary: form.summary.value,
 			user: user?._id as string,
+			banner: form.banner.value,
 		};
 
 		await updateBook({ id, data });

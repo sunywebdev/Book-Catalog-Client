@@ -3,7 +3,6 @@ import { ChangeEvent } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineDelete, AiOutlineHeart } from "react-icons/ai";
 import { BiEdit } from "react-icons/bi";
-import { HiOutlineBookOpen } from "react-icons/hi";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
 	useCreateCommentMutation,

@@ -33,6 +33,7 @@ const BookDetails = () => {
 
 	const book: iBook = data.data;
 	const isAuthorized = book.user === user?._id;
+	const isUserActive = user?._id;
 
 	const handleComment = async (event: ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -110,7 +111,7 @@ const BookDetails = () => {
 				</button>
 				<button
 					onClick={handleWishlist}
-					disabled={!isAuthorized}
+					disabled={!isUserActive}
 					className='btn btn-sm btn-ghost px-1 text-2xl '>
 					<AiOutlineHeart />
 				</button>

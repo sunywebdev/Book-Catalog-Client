@@ -1,40 +1,43 @@
-import { HiOutlineBookOpen } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { iBook } from "../types/globalTypes";
 
 type iProps = {
-  book: iBook;
+	book: iBook;
 };
 
 const BookGrid = ({ book }: iProps) => {
-  const date = new Date(book.publicationDate).toLocaleDateString();
-
-  return (
-    <>
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body gap-y-1">
-          <HiOutlineBookOpen className="text-lg"></HiOutlineBookOpen>
-          <h2 className="text-lg font-semibold">{book.name}</h2>
-          <p className="text-sm">
-            By <span className="hover:underline">{book.author}</span>
-          </p>
-
-          <div className="text-sm font-medium flex justify-between mb-5">
-            <span>{book.genre}</span>
-            <span>{date}</span>
-          </div>
-          <div className="card-actions justify-end">
-            <Link
-              to={`/all-books/${book._id}`}
-              className="btn btn-primary btn-sm w-full text-xs"
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div
+				key={book.name}
+				className='bg-white overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-1 text-center p-2'>
+				<img
+					className='mx-auto'
+					src={book.banner}
+					alt={book.name}
+					style={{
+						width: "200px",
+						height: "275px",
+					}}
+				/>
+				<div>
+					<div className='font-bold  mb-2'>{book.name?.slice(0, 20)}...</div>
+					<p className='text-gray-700 '>by - {book.author}</p>
+					<p className='text-gray-700'>{book.genre}</p>
+					<p className='text-gray-600 text-sm mt-2'>
+						{new Date(book.publicationDate).toLocaleString()}
+					</p>
+				</div>
+				<div className='card-actions mt-2'>
+					<Link
+						to={`/all-books/${book._id}`}
+						className='btn btn-primary btn-sm text-xs mx-auto'>
+						View Details
+					</Link>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default BookGrid;

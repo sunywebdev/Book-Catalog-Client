@@ -110,6 +110,7 @@ const BookDetails = () => {
 				</button>
 				<button
 					onClick={handleWishlist}
+					disabled={!isAuthorized}
 					className='btn btn-sm btn-ghost px-1 text-2xl '>
 					<AiOutlineHeart />
 				</button>

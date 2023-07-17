@@ -35,14 +35,19 @@ const EditBook = () => {
 		toast.success("Book updated successfull!");
 	};
 
-	if (isLoading) return <div>loading</div>;
+	if (isLoading)
+		return (
+			<div className='flex items-center justify-center h-screen'>
+				<div className='animate-spin rounded-full h-20 w-20 border-t-4 border-[#171547] border-solid'></div>
+			</div>
+		);
 
 	return (
 		<>
 			<div className='container'>
-				<div className='p-5 md:p-8 lg:p-16'>
+				<div className='p-5 md:p-8 lg:p-16  text-center'>
 					<div className='mb-5'>
-						<h3 className='text-xl font-semibold'>Edit Book</h3>
+						<h3 className='text-xl font-semibold text-[#171547]'>Edit Book</h3>
 						<p>Edit the form and submit to modify the book.</p>
 					</div>
 					<BookForm data={data?.data} handler={handleEditBook} />

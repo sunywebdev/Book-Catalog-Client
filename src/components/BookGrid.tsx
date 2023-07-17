@@ -31,7 +31,7 @@ const BookGrid = ({ book }: iProps) => {
 				<div className='card-actions mt-2'>
 					<Link
 						to={`/all-books/${book._id}`}
-						className='btn btn-primary btn-sm text-xs mx-auto'>
+						className='btn btn-primary btn-sm text-xs mx-auto bg-[#171547]'>
 						View Details
 					</Link>
 				</div>

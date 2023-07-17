@@ -17,7 +17,7 @@ const BookForm = ({ data, handler }: iProps) => {
 	return (
 		<div>
 			<form onSubmit={handler}>
-				<div className='form-control w-full max-w-xs'>
+				<div className='form-control w-full '>
 					<label className='label'>
 						<span className='label-text'>Book Banner</span>
 					</label>
@@ -25,10 +25,10 @@ const BookForm = ({ data, handler }: iProps) => {
 						type='text'
 						name='banner'
 						defaultValue={data?.banner}
-						className='input input-sm input-bordered w-full max-w-xs'
+						className='input input-sm input-bordered w-full '
 					/>
 				</div>
-				<div className='form-control w-full max-w-xs'>
+				<div className='form-control w-full '>
 					<label className='label'>
 						<span className='label-text'>Book Name</span>
 					</label>
@@ -36,11 +36,11 @@ const BookForm = ({ data, handler }: iProps) => {
 						type='text'
 						name='book_name'
 						defaultValue={data?.name}
-						className='input input-sm input-bordered w-full max-w-xs'
+						className='input input-sm input-bordered w-full '
 					/>
 				</div>
 
-				<div className='form-control w-full max-w-xs'>
+				<div className='form-control w-full '>
 					<label className='label'>
 						<span className='label-text'>Author</span>
 					</label>
@@ -48,11 +48,11 @@ const BookForm = ({ data, handler }: iProps) => {
 						type='text'
 						name='author'
 						defaultValue={data?.author}
-						className='input input-sm input-bordered w-full max-w-xs'
+						className='input input-sm input-bordered w-full '
 					/>
 				</div>
 
-				<div className='form-control w-full max-w-xs'>
+				<div className='form-control w-full '>
 					<label className='label'>
 						<span className='label-text'>Publication Date</span>
 					</label>
@@ -60,11 +60,11 @@ const BookForm = ({ data, handler }: iProps) => {
 						type='date'
 						name='publication_date'
 						defaultValue={formattedDate}
-						className='input input-sm input-bordered w-full max-w-xs'
+						className='input input-sm input-bordered w-full '
 					/>
 				</div>
 
-				<div className='form-control w-full max-w-xs'>
+				<div className='form-control w-full '>
 					<label className='label'>
 						<span className='label-text'>Genre</span>
 					</label>
@@ -79,7 +79,7 @@ const BookForm = ({ data, handler }: iProps) => {
 					</select>
 				</div>
 
-				<div className='form-control w-full max-w-xs'>
+				<div className='form-control w-full '>
 					<label className='label'>
 						<span className='label-text'>summary</span>
 					</label>
@@ -91,7 +91,7 @@ const BookForm = ({ data, handler }: iProps) => {
 
 				<button
 					type='submit'
-					className='btn btn-primary btn-sm text-xs px-16 mt-5'>
+					className='btn btn-primary btn-sm text-xs px-16 mt-5 bg-[#171547]'>
 					{data ? "Update Book" : "Add New Book"}
 				</button>
 			</form>

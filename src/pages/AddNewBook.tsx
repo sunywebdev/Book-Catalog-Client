@@ -31,9 +31,11 @@ const AddNewBook = () => {
 	return (
 		<>
 			<div className='container'>
-				<div className='p-5 md:p-8 lg:p-16'>
+				<div className='p-5 md:p-8 lg:p-16 text-center'>
 					<div className='mb-5'>
-						<h3 className='text-xl font-semibold'>Add New Book</h3>
+						<h3 className='text-xl font-semibold text-[#171547]'>
+							Add New Book
+						</h3>
 						<p>Fill the form & submit to add a new Book.</p>
 					</div>
 					<BookForm handler={handleAddNewBook} />

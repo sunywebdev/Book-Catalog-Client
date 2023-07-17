@@ -24,7 +24,12 @@ const BookDetails = () => {
 	const [updateUserWishlist] = useUpdateUserWishlistMutation();
 	const [deleteBook] = useDeleteBookMutation();
 
-	if (isLoading) return <div>loading</div>;
+	if (isLoading)
+		return (
+			<div className='flex items-center justify-center h-screen'>
+				<div className='animate-spin rounded-full h-20 w-20 border-t-4 border-[#171547] border-solid'></div>
+			</div>
+		);
 
 	const book: iBook = data.data;
 	const isAuthorized = book.user === user?._id;
